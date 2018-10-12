@@ -1,0 +1,17 @@
+{
+  "name": "helobyd.emrys.cymru",
+  "authors": [
+    "Emrys <emrys@openenergymonitor.org>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
