@@ -9,5 +9,5 @@ uses:
    On CSS Tricks - By Chris Coyier
 
 ![screenshot](https://raw.githubusercontent.com/emrysr/automatic-guacamole/master/screenshot-helobyd.gif)
-see [https://helobyd.emrys.cymru](https://helobyd.emrys.cymru) for demo
 
+see [https://helobyd.emrys.cymru](https://helobyd.emrys.cymru) for demo
