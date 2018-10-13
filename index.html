@@ -5,49 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Helo Byd!</title>
-    <link rel="stylesheet" href="vue-typed-js/dist/vue-typed-js.css"/>
-    
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="vue-typed-js/dist/vue-typed-js.browser.js"></script>
-    
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typed-js.css@2.0.9"/> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.9/typed.min.js"></script>
     <script type="module" defer>
-        // include the vue-js-typed component
-        Vue.use(VueTypedJs)
-        // create my own component to wrap the typed-js component (stops camelcase warnings if template not inline)
-        Vue.component('my-typed-js', {
-            props: ['strings'],
-            template: `<output>
-                <vue-typed-js :strings="strings" @onComplete="onComplete" :fadeOut="true" fadeOutClass="'fadeout'">
-                <div class="typing"></div>
-                </vue-typed-js>
-            </output>`,
-            methods: {
-                onComplete: function(){
-                    window.setTimeout(function(){
-                        document.location.replace('https://emrys.cymru')
-                    }, 2000)
-                }
+        var options = {
+            strings: [
+                '`root@emrys.cymru #` ^2400 .^200\/^300c^400roe^600so ^600',
+                'Chwylio.....^200........^600...',
+                '`Helo Byd!`^2000',
+                '`Creu` gwefan:^900 `"y-gwewyr.v2.01"`.^800.^900.'
+            ],
+            typeSpeed: 40,
+            fadeOut: true,
+            fadeOutClass: 'fadeout',
+            onComplete: function(){
+                window.setTimeout(function(){
+                    document.location.replace('https://emrys.cymru')
+                }, 2000)
             }
-        })
-
-        // main vuejs app
-        var app = new Vue({
-            el: '#app',
-            data: {
-                strings: [
-                    '`root@emrys.cymru #` ^2400 .^200\/^300c^400roe^600so ^600',
-                    'Chwylio.....^200........^600...',
-                    '`Helo Byd!`^2000',
-                    '`Creu` gwefan:^900 `"y-gwewyr.v2.01"`.^800.^900.'
-                ]
-            }
-        })
-        
+        }
+        var typed = new Typed("#typed", options);
     </script>
     <style>
-    /* not my css
+    /* not all my own css
 
-    made by: chris coyier:
+    based on work made by: chris coyier:
     https://css-tricks.com/old-timey-terminal-styling/
     */
     body {
@@ -65,29 +47,17 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        background: repeating-linear-gradient(
-            0deg,
-            rgba(black, 0.15),
-            rgba(black, 0.15) 1px,
-            transparent 1px,
-            transparent 2px
-        );
         background:-webkit-repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.16) 0px, rgba(0, 0, 0, 0.16) 1px, rgba(0, 0, 0, 0) 1px, rgba(0, 0, 0, 0) 2px);
         background:-o-repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.16) 0px, rgba(0, 0, 0, 0.16) 1px, rgba(0, 0, 0, 0) 1px, rgba(0, 0, 0, 0) 2px);
         background:-moz-repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.16) 0px, rgba(0, 0, 0, 0.16) 1px, rgba(0, 0, 0, 0) 1px, rgba(0, 0, 0, 0) 2px);
         background:repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.16) 0px, rgba(0, 0, 0, 0.16) 1px, rgba(0, 0, 0, 0) 1px, rgba(0, 0, 0, 0) 2px);
     }
-    ::selection {
-        background: #0080FF;
-        text-shadow: none;
-    }
-        
     </style>
 </head>
 <body>
     <main id="app">
         <section>
-            <my-typed-js :strings="strings"></my-typed-js>
+            <output id="typed"></output>
         </section>
     </main>
 </body>
